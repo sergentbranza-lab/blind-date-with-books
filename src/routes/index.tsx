@@ -7,17 +7,17 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "Blind Date with a Book — Let fate choose your next read" },
+      { title: "Întâlnire pe nevăzute cu o carte — Lasă destinul să-ți aleagă următoarea lectură" },
       {
         name: "description",
         content:
-          "A mysterious, gothic literary surprise. Each book is wrapped with care, sealed with wax, and delivered with a handwritten note and a small keepsake.",
+          "O surpriză literară misterioasă și gotică. Fiecare carte este învelită cu grijă, sigilată cu ceară și livrată cu un bilet scris de mână și un mic suvenir.",
       },
-      { property: "og:title", content: "Blind Date with a Book" },
+      { property: "og:title", content: "Întâlnire pe nevăzute cu o carte" },
       {
         property: "og:description",
         content:
-          "Let fate choose your next great read. Wrapped with care and a touch of darkness.",
+          "Lasă destinul să-ți aleagă următoarea lectură. Învelită cu grijă și o notă de întuneric.",
       },
     ],
   }),
