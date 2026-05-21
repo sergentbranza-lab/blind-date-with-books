@@ -208,12 +208,12 @@ function LandingPage() {
         </div>
 
         <div className="mx-auto max-w-3xl px-6 py-28 text-center md:py-40">
-          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Step Into the Library</p>
+          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Pășește în bibliotecă</p>
           <h2 className="mt-6 font-display text-4xl leading-tight sm:text-6xl">
-            Will you trust <em className="text-gold">fate</em>?
+            Te încrezi în <em className="text-gold">destin</em>?
           </h2>
           <p className="mx-auto mt-6 max-w-xl font-serif text-xl text-muted-foreground sm:text-2xl">
-            Your next obsession is waiting in the dark.
+            Următoarea ta obsesie te așteaptă în întuneric.
           </p>
 
           <a
@@ -222,7 +222,7 @@ function LandingPage() {
             rel="noopener noreferrer"
             className="group relative mt-12 inline-flex items-center gap-3 overflow-hidden rounded-sm border border-gold/70 bg-gradient-to-b from-[oklch(0.36_0.13_15)] to-[oklch(0.22_0.08_15)] px-10 py-5 font-display text-base tracking-[0.25em] text-foreground uppercase shadow-[0_10px_50px_-12px_oklch(0.74_0.12_80/0.5)] transition-all duration-500 hover:border-gold hover:shadow-[0_10px_60px_-8px_oklch(0.74_0.12_80/0.8)] hover:-translate-y-0.5"
           >
-            <span>Get Your Blind Date</span>
+            <span>Comandă întâlnirea ta</span>
             <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
             <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
           </a>
@@ -235,7 +235,7 @@ function LandingPage() {
       <footer className="relative border-t border-gold/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            © {new Date().getFullYear()} Blind Date with a Book
+            © {new Date().getFullYear()} Întâlnire pe nevăzute cu o carte
           </p>
 
           {/* Raven silhouette */}
@@ -244,7 +244,7 @@ function LandingPage() {
             width="56"
             height="28"
             className="text-gold/70 transition-colors hover:text-gold"
-            aria-label="Raven"
+            aria-label="Corb"
           >
             <path
               fill="currentColor"
@@ -253,7 +253,7 @@ function LandingPage() {
           </svg>
 
           <p className="font-serif text-sm italic text-muted-foreground">
-            "Books are a uniquely portable magic." ✦
+            „Cărțile sunt o magie unic de portabilă." ✦
           </p>
         </div>
       </footer>
