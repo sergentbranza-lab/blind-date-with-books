@@ -107,7 +107,7 @@ function LandingPage() {
             <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
               <img
                 src={heroBook}
-                alt="A book wrapped in aged kraft paper, tied with a dusty violet velvet ribbon and sealed with a muted gold wax seal, surrounded by dried roses and candlelight."
+                alt="O carte învelită în hârtie kraft îngălbenită, legată cu o panglică de catifea violet prăfuit și sigilată cu un sigiliu de ceară aurie, înconjurată de trandafiri uscați și lumânări."
                 width={1536}
                 height={1536}
                 className="h-full w-full object-cover transition-transform duration-[2000ms] ease-out hover:scale-105"
