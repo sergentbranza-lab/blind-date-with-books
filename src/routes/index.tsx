@@ -121,15 +121,15 @@ function LandingPage() {
       {/* Concept */}
       <section id="concept" className="relative border-y border-gold/10 bg-[oklch(0.12_0.02_20/0.6)] backdrop-blur-sm">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:py-32">
-          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">The Ritual</p>
+          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Ritualul</p>
           <h2 className="mt-6 font-display text-4xl leading-tight sm:text-5xl">
-            You won't know the title <em className="text-gold">until it arrives.</em>
+            Nu vei ști titlul <em className="text-gold">până nu sosește.</em>
           </h2>
           <Ornament className="mt-10" />
           <p className="mx-auto mt-10 max-w-2xl font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-            Each book is hand-selected by candlelight and bound in brown paper.
-            Whispered cues hint at its soul — a mood, a season, a single line —
-            but the title remains a secret until the wax seal is broken.
+            Fiecare carte este aleasă cu grijă la lumina lumânării și învelită în hârtie maro.
+            Câteva indicii șoptite trădează sufletul ei — o stare, un anotimp, un singur rând —
+            însă titlul rămâne un secret până când sigiliul de ceară este rupt.
           </p>
         </div>
       </section>
@@ -141,7 +141,7 @@ function LandingPage() {
             <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
               <img
                 src={conceptBooks}
-                alt="Antique leather-bound books with gold gilt, a handwritten note, a pressed black rose and a brass key on burgundy velvet."
+                alt="Cărți antice legate în piele cu aurituri, un bilet scris de mână, un trandafir negru presat și o cheie de alamă pe catifea bordo."
                 width={1536}
                 height={1152}
                 loading="lazy"
@@ -151,28 +151,28 @@ function LandingPage() {
           </div>
 
           <div className="order-1 md:order-2">
-            <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Inside the Parcel</p>
+            <p className="text-xs uppercase tracking-[0.45em] text-gold/80">În interiorul pachetului</p>
             <h2 className="mt-6 font-display text-4xl leading-tight sm:text-5xl">
-              A small ceremony, <em className="text-gold">delivered.</em>
+              O mică ceremonie, <em className="text-gold">livrată.</em>
             </h2>
 
             <ul className="mt-10 space-y-7 font-serif text-lg text-muted-foreground sm:text-xl">
               {[
                 {
-                  title: "A curated novel",
-                  body: "Chosen for its atmosphere — gothic, romantic, strange, or beautifully unsettling.",
+                  title: "Un roman ales cu grijă",
+                  body: "Selectat pentru atmosfera sa — gotic, romantic, straniu sau frumos de tulburător.",
                 },
                 {
-                  title: "A handwritten note",
-                  body: "Penned by candlelight on aged parchment, offering a single clue.",
+                  title: "Un bilet scris de mână",
+                  body: "Scris la lumina lumânării pe pergament îngălbenit, oferind un singur indiciu.",
                 },
                 {
-                  title: "A ribboned bookmark",
-                  body: "Velvet ribbon and brass charm, to keep your place between worlds.",
+                  title: "Un semn de carte cu panglică",
+                  body: "Panglică de catifea și amuletă de alamă, ca să-ți păstreze locul între lumi.",
                 },
                 {
-                  title: "A small gothic keepsake",
-                  body: "A pressed flower, a wax-sealed letter, or a celestial trinket.",
+                  title: "Un mic suvenir gotic",
+                  body: "O floare presată, o scrisoare sigilată cu ceară sau o bijuterie celestă.",
                 },
               ].map((item, i) => (
                 <li
