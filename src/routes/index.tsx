@@ -7,17 +7,17 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "Blind Date with a Book — Let fate choose your next read" },
+      { title: "Întâlnire pe nevăzute cu o carte — Lasă destinul să-ți aleagă următoarea lectură" },
       {
         name: "description",
         content:
-          "A mysterious, gothic literary surprise. Each book is wrapped with care, sealed with wax, and delivered with a handwritten note and a small keepsake.",
+          "O surpriză literară misterioasă și gotică. Fiecare carte este învelită cu grijă, sigilată cu ceară și livrată cu un bilet scris de mână și un mic suvenir.",
       },
-      { property: "og:title", content: "Blind Date with a Book" },
+      { property: "og:title", content: "Întâlnire pe nevăzute cu o carte" },
       {
         property: "og:description",
         content:
-          "Let fate choose your next great read. Wrapped with care and a touch of darkness.",
+          "Lasă destinul să-ți aleagă următoarea lectură. Învelită cu grijă și o notă de întuneric.",
       },
     ],
   }),
@@ -55,9 +55,9 @@ function LandingPage() {
           ✦ BDWAB
         </a>
         <nav className="hidden gap-8 text-xs uppercase tracking-[0.25em] text-muted-foreground sm:flex">
-          <a href="#concept" className="transition-colors hover:text-gold">The Ritual</a>
-          <a href="#inside" className="transition-colors hover:text-gold">What's Inside</a>
-          <a href="#order" className="transition-colors hover:text-gold">Order</a>
+          <a href="#concept" className="transition-colors hover:text-gold">Ritualul</a>
+          <a href="#inside" className="transition-colors hover:text-gold">Ce conține</a>
+          <a href="#order" className="transition-colors hover:text-gold">Comandă</a>
         </nav>
       </header>
 
@@ -66,14 +66,14 @@ function LandingPage() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-8 pb-24 md:grid-cols-2 md:pt-16 md:pb-32">
           <div className="relative z-10">
             <p className="animate-fade-up text-xs uppercase tracking-[0.45em] text-gold/80">
-              A Literary Séance
+              O ședință literară
             </p>
             <h1 className="animate-fade-up delay-100 mt-6 font-display text-5xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl">
-              Blind Date <span className="italic text-gold">with a</span> Book
+              Întâlnire <span className="italic text-gold">pe nevăzute cu o</span> Carte
             </h1>
             <p className="animate-fade-up delay-200 mt-6 max-w-md font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-              Let fate choose your next great read. Wrapped with care
-              <span className="text-foreground/90"> and a touch of darkness.</span>
+              Lasă destinul să-ți aleagă următoarea lectură. Învelită cu grijă
+              <span className="text-foreground/90"> și o notă de întuneric.</span>
             </p>
 
             <div className="animate-fade-up delay-300 mt-10 flex flex-wrap items-center gap-5">
@@ -83,7 +83,7 @@ function LandingPage() {
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm border border-gold/70 bg-gradient-to-b from-[oklch(0.36_0.13_15)] to-[oklch(0.22_0.08_15)] px-8 py-4 font-display text-base tracking-[0.2em] text-foreground uppercase shadow-[0_8px_40px_-12px_oklch(0.74_0.12_80/0.4)] transition-all duration-500 hover:border-gold hover:shadow-[0_8px_50px_-8px_oklch(0.74_0.12_80/0.7)] hover:-translate-y-0.5"
               >
-                <span className="relative">Surprise Me</span>
+                <span className="relative">Surprinde-mă</span>
                 <span
                   aria-hidden
                   className="relative transition-transform duration-500 group-hover:translate-x-1"
@@ -96,7 +96,7 @@ function LandingPage() {
                 href="#concept"
                 className="text-sm uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-gold"
               >
-                Learn the Ritual
+                Descoperă ritualul
               </a>
             </div>
 
@@ -107,7 +107,7 @@ function LandingPage() {
             <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
               <img
                 src={heroBook}
-                alt="A book wrapped in aged kraft paper, tied with a dusty violet velvet ribbon and sealed with a muted gold wax seal, surrounded by dried roses and candlelight."
+                alt="O carte învelită în hârtie kraft îngălbenită, legată cu o panglică de catifea violet prăfuit și sigilată cu un sigiliu de ceară aurie, înconjurată de trandafiri uscați și lumânări."
                 width={1536}
                 height={1536}
                 className="h-full w-full object-cover transition-transform duration-[2000ms] ease-out hover:scale-105"
@@ -121,15 +121,15 @@ function LandingPage() {
       {/* Concept */}
       <section id="concept" className="relative border-y border-gold/10 bg-[oklch(0.12_0.02_20/0.6)] backdrop-blur-sm">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center md:py-32">
-          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">The Ritual</p>
+          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Ritualul</p>
           <h2 className="mt-6 font-display text-4xl leading-tight sm:text-5xl">
-            You won't know the title <em className="text-gold">until it arrives.</em>
+            Nu vei ști titlul <em className="text-gold">până nu sosește.</em>
           </h2>
           <Ornament className="mt-10" />
           <p className="mx-auto mt-10 max-w-2xl font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-            Each book is hand-selected by candlelight and bound in brown paper.
-            Whispered cues hint at its soul — a mood, a season, a single line —
-            but the title remains a secret until the wax seal is broken.
+            Fiecare carte este aleasă cu grijă la lumina lumânării și învelită în hârtie maro.
+            Câteva indicii șoptite trădează sufletul ei — o stare, un anotimp, un singur rând —
+            însă titlul rămâne un secret până când sigiliul de ceară este rupt.
           </p>
         </div>
       </section>
@@ -141,7 +141,7 @@ function LandingPage() {
             <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
               <img
                 src={conceptBooks}
-                alt="Antique leather-bound books with gold gilt, a handwritten note, a pressed black rose and a brass key on burgundy velvet."
+                alt="Cărți antice legate în piele cu aurituri, un bilet scris de mână, un trandafir negru presat și o cheie de alamă pe catifea bordo."
                 width={1536}
                 height={1152}
                 loading="lazy"
@@ -151,28 +151,28 @@ function LandingPage() {
           </div>
 
           <div className="order-1 md:order-2">
-            <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Inside the Parcel</p>
+            <p className="text-xs uppercase tracking-[0.45em] text-gold/80">În interiorul pachetului</p>
             <h2 className="mt-6 font-display text-4xl leading-tight sm:text-5xl">
-              A small ceremony, <em className="text-gold">delivered.</em>
+              O mică ceremonie, <em className="text-gold">livrată.</em>
             </h2>
 
             <ul className="mt-10 space-y-7 font-serif text-lg text-muted-foreground sm:text-xl">
               {[
                 {
-                  title: "A curated novel",
-                  body: "Chosen for its atmosphere — gothic, romantic, strange, or beautifully unsettling.",
+                  title: "Un roman ales cu grijă",
+                  body: "Selectat pentru atmosfera sa — gotic, romantic, straniu sau frumos de tulburător.",
                 },
                 {
-                  title: "A handwritten note",
-                  body: "Penned by candlelight on aged parchment, offering a single clue.",
+                  title: "Un bilet scris de mână",
+                  body: "Scris la lumina lumânării pe pergament îngălbenit, oferind un singur indiciu.",
                 },
                 {
-                  title: "A ribboned bookmark",
-                  body: "Velvet ribbon and brass charm, to keep your place between worlds.",
+                  title: "Un semn de carte cu panglică",
+                  body: "Panglică de catifea și amuletă de alamă, ca să-ți păstreze locul între lumi.",
                 },
                 {
-                  title: "A small gothic keepsake",
-                  body: "A pressed flower, a wax-sealed letter, or a celestial trinket.",
+                  title: "Un mic suvenir gotic",
+                  body: "O floare presată, o scrisoare sigilată cu ceară sau o bijuterie celestă.",
                 },
               ].map((item, i) => (
                 <li
@@ -208,12 +208,12 @@ function LandingPage() {
         </div>
 
         <div className="mx-auto max-w-3xl px-6 py-28 text-center md:py-40">
-          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Step Into the Library</p>
+          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Pășește în bibliotecă</p>
           <h2 className="mt-6 font-display text-4xl leading-tight sm:text-6xl">
-            Will you trust <em className="text-gold">fate</em>?
+            Te încrezi în <em className="text-gold">destin</em>?
           </h2>
           <p className="mx-auto mt-6 max-w-xl font-serif text-xl text-muted-foreground sm:text-2xl">
-            Your next obsession is waiting in the dark.
+            Următoarea ta obsesie te așteaptă în întuneric.
           </p>
 
           <a
@@ -222,7 +222,7 @@ function LandingPage() {
             rel="noopener noreferrer"
             className="group relative mt-12 inline-flex items-center gap-3 overflow-hidden rounded-sm border border-gold/70 bg-gradient-to-b from-[oklch(0.36_0.13_15)] to-[oklch(0.22_0.08_15)] px-10 py-5 font-display text-base tracking-[0.25em] text-foreground uppercase shadow-[0_10px_50px_-12px_oklch(0.74_0.12_80/0.5)] transition-all duration-500 hover:border-gold hover:shadow-[0_10px_60px_-8px_oklch(0.74_0.12_80/0.8)] hover:-translate-y-0.5"
           >
-            <span>Get Your Blind Date</span>
+            <span>Comandă întâlnirea ta</span>
             <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
             <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
           </a>
@@ -235,7 +235,7 @@ function LandingPage() {
       <footer className="relative border-t border-gold/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            © {new Date().getFullYear()} Blind Date with a Book
+            © {new Date().getFullYear()} Întâlnire pe nevăzute cu o carte
           </p>
 
           {/* Raven silhouette */}
@@ -244,7 +244,7 @@ function LandingPage() {
             width="56"
             height="28"
             className="text-gold/70 transition-colors hover:text-gold"
-            aria-label="Raven"
+            aria-label="Corb"
           >
             <path
               fill="currentColor"
@@ -253,7 +253,7 @@ function LandingPage() {
           </svg>
 
           <p className="font-serif text-sm italic text-muted-foreground">
-            "Books are a uniquely portable magic." ✦
+            „Cărțile sunt o magie unic de portabilă." ✦
           </p>
         </div>
       </footer>
