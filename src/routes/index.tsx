@@ -55,9 +55,9 @@ function LandingPage() {
           ✦ BDWAB
         </a>
         <nav className="hidden gap-8 text-xs uppercase tracking-[0.25em] text-muted-foreground sm:flex">
-          <a href="#concept" className="transition-colors hover:text-gold">The Ritual</a>
-          <a href="#inside" className="transition-colors hover:text-gold">What's Inside</a>
-          <a href="#order" className="transition-colors hover:text-gold">Order</a>
+          <a href="#concept" className="transition-colors hover:text-gold">Ritualul</a>
+          <a href="#inside" className="transition-colors hover:text-gold">Ce conține</a>
+          <a href="#order" className="transition-colors hover:text-gold">Comandă</a>
         </nav>
       </header>
 
@@ -66,14 +66,14 @@ function LandingPage() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-8 pb-24 md:grid-cols-2 md:pt-16 md:pb-32">
           <div className="relative z-10">
             <p className="animate-fade-up text-xs uppercase tracking-[0.45em] text-gold/80">
-              A Literary Séance
+              O ședință literară
             </p>
             <h1 className="animate-fade-up delay-100 mt-6 font-display text-5xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl">
-              Blind Date <span className="italic text-gold">with a</span> Book
+              Întâlnire <span className="italic text-gold">pe nevăzute cu o</span> Carte
             </h1>
             <p className="animate-fade-up delay-200 mt-6 max-w-md font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-              Let fate choose your next great read. Wrapped with care
-              <span className="text-foreground/90"> and a touch of darkness.</span>
+              Lasă destinul să-ți aleagă următoarea lectură. Învelită cu grijă
+              <span className="text-foreground/90"> și o notă de întuneric.</span>
             </p>
 
             <div className="animate-fade-up delay-300 mt-10 flex flex-wrap items-center gap-5">
@@ -83,7 +83,7 @@ function LandingPage() {
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm border border-gold/70 bg-gradient-to-b from-[oklch(0.36_0.13_15)] to-[oklch(0.22_0.08_15)] px-8 py-4 font-display text-base tracking-[0.2em] text-foreground uppercase shadow-[0_8px_40px_-12px_oklch(0.74_0.12_80/0.4)] transition-all duration-500 hover:border-gold hover:shadow-[0_8px_50px_-8px_oklch(0.74_0.12_80/0.7)] hover:-translate-y-0.5"
               >
-                <span className="relative">Surprise Me</span>
+                <span className="relative">Surprinde-mă</span>
                 <span
                   aria-hidden
                   className="relative transition-transform duration-500 group-hover:translate-x-1"
@@ -96,7 +96,7 @@ function LandingPage() {
                 href="#concept"
                 className="text-sm uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-gold"
               >
-                Learn the Ritual
+                Descoperă ritualul
               </a>
             </div>
 
