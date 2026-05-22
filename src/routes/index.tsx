@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const PURCHASE_URL = "https://yourbookshop.com/blind-date";
+const PURCHASE_URL = "https://www.vinted.ro/member/185808324";
 
 function Ornament({ className = "" }: { className?: string }) {
   return (
