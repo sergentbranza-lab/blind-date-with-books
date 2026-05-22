@@ -156,35 +156,29 @@ function LandingPage() {
               O mică ceremonie, <em className="text-gold">livrată.</em>
             </h2>
 
-            <ul className="mt-10 space-y-7 font-serif text-lg text-muted-foreground sm:text-xl">
+            <p className="mt-6 font-serif text-lg text-muted-foreground sm:text-xl">
+              Fiecare pachet conține:
+            </p>
+            <ul className="mt-8 space-y-5 font-serif text-lg text-muted-foreground sm:text-xl">
               {[
-                {
-                  title: "Un roman ales cu grijă",
-                  body: "Selectat pentru atmosfera sa — gotic, romantic, straniu sau frumos de tulburător.",
-                },
-                {
-                  title: "Un bilet scris de mână",
-                  body: "Scris la lumina lumânării pe pergament îngălbenit, oferind un singur indiciu.",
-                },
-                {
-                  title: "Un semn de carte cu panglică",
-                  body: "Panglică de catifea și amuletă de alamă, ca să-ți păstreze locul între lumi.",
-                },
-                {
-                  title: "Un mic suvenir gotic",
-                  body: "O floare presată, o scrisoare sigilată cu ceară sau o bijuterie celestă.",
-                },
+                "📖 o carte (genul la alegerea ta – surpriză sau știut)",
+                "📋 reading list – sugestii de viitoare lecturi",
+                "✍️ book review – ca să-ți notezi impresiile",
+                "🔖 două semne de carte drăguțe",
+                "🖊️ un pix",
+                "🖍️ un marker",
+                "🎨 stickere",
+                "📝 sticky notes",
+                "☕ un plic de ceai sau cafea",
+                "❤️ multă, multă iubire ❤️",
               ].map((item, i) => (
                 <li
-                  key={item.title}
-                  className="group flex gap-5 transition-colors"
-                  style={{ animation: `fadeUp 0.9s ease-out ${0.1 + i * 0.1}s both` }}
+                  key={item}
+                  className="group flex items-center gap-4 transition-colors"
+                  style={{ animation: `fadeUp 1.2s ease-out ${0.1 + i * 0.08}s both` }}
                 >
-                  <span className="mt-3 inline-block h-px w-8 flex-shrink-0 bg-gold/60 transition-all duration-500 group-hover:w-12 group-hover:bg-gold" />
-                  <div>
-                    <h3 className="font-display text-xl text-foreground">{item.title}</h3>
-                    <p className="mt-1 text-base leading-relaxed">{item.body}</p>
-                  </div>
+                  <span className="inline-block h-px w-6 flex-shrink-0 bg-gold/60 transition-all duration-500 group-hover:w-10 group-hover:bg-gold" />
+                  <span className="text-base leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
