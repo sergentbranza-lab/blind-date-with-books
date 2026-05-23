@@ -7,13 +7,13 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "Întâlnire pe nevăzute cu o carte — Lasă destinul să-ți aleagă următoarea lectură" },
+      { title: "Blind Date with a Book — Lasă destinul să-ți aleagă următoarea lectură" },
       {
         name: "description",
         content:
           "O surpriză literară misterioasă și gotică. Fiecare carte este învelită cu grijă, sigilată cu ceară și livrată cu un bilet scris de mână și un mic suvenir.",
       },
-      { property: "og:title", content: "Întâlnire pe nevăzute cu o carte" },
+      { property: "og:title", content: "Blind Date with a Book" },
       {
         property: "og:description",
         content:
@@ -69,7 +69,7 @@ function LandingPage() {
               O ședință literară
             </p>
             <h1 className="animate-fade-up delay-100 mt-6 font-display text-5xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl">
-              Întâlnire <span className="italic text-gold">pe nevăzute cu o</span> Carte
+              Blind Date <span className="italic text-gold">with a</span> Book
             </h1>
             <p className="animate-fade-up delay-200 mt-6 max-w-md font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
               Lasă destinul să-ți aleagă următoarea lectură. Învelită cu grijă
@@ -229,7 +229,7 @@ function LandingPage() {
       <footer className="relative border-t border-gold/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            © {new Date().getFullYear()} Întâlnire pe nevăzute cu o carte
+            © {new Date().getFullYear()} Blind Date with a Book
           </p>
 
           {/* Raven silhouette */}
