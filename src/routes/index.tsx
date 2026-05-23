@@ -141,7 +141,7 @@ function LandingPage() {
             <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
               <img
                 src={conceptBooks}
-                alt="Cărți antice legate în piele cu aurituri, un bilet scris de mână, un trandafir negru presat și o cheie de alamă pe catifea bordo."
+                alt="O carte învelită în hârtie kraft, legată cu o panglică de catifea, sigilată cu ceară, alături de o scrisoare scrisă de mână și trandafiri uscați pe catifea bordo."
                 width={1536}
                 height={1152}
                 loading="lazy"
