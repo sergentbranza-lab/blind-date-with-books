@@ -27,7 +27,7 @@ const GENRES = ["Thriller", "Romance", "Dark Romance", "Fantasy"];
 function CheckoutPage() {
   const { p } = Route.useSearch();
   const navigate = useNavigate();
-  const product = PRODUCT_INFO[p];
+  const product = PRODUCT_INFO[p as keyof typeof PRODUCT_INFO];
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: "",
