@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroBook from "../assets/hero-book.jpg";
 import gothicWindow from "../assets/gothic-window.jpg";
 import dateBox1 from "../assets/date-box-1.jpg";
-import dateBox2 from "../assets/date-box-2.jpg";
+
 import blindBook1 from "../assets/blind-book-1.jpg";
 import blindBook2 from "../assets/blind-book-2.jpg";
 import blindBook3 from "../assets/blind-book-3.jpg";
@@ -60,7 +60,7 @@ const PRODUCTS: Product[] = [
     description:
       "O cutie plină de magie: o carte la alegere (thriller, romance, dark romance sau fantasy) însoțită de multe surprize bookish atent alese.",
     price: 130,
-    images: [dateBox1, dateBox2],
+    images: [dateBox1],
     features: [
       "📖 o carte — genul la alegerea ta",
       "☕ cană tematică + accesorii",
@@ -181,9 +181,6 @@ function LandingPage() {
       <section id="top" className="relative">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-8 pb-20 md:grid-cols-2 md:pt-16 md:pb-28">
           <div className="relative z-10">
-            <p className="animate-fade-up text-xs uppercase tracking-[0.45em] text-gold/80">
-              O ședință literară
-            </p>
             <h1 className="animate-fade-up delay-100 mt-6 font-display text-5xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl">
               Blind Date <span className="italic text-gold">with a</span> Book
             </h1>
