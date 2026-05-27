@@ -1,41 +1,37 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import heroBook from "../assets/hero-book.jpg";
 import gothicWindow from "../assets/gothic-window.jpg";
-import conceptBooks from "../assets/concept-books.jpg";
+import dateBox1 from "../assets/date-box-1.jpg";
+import dateBox2 from "../assets/date-box-2.jpg";
+import blindBook1 from "../assets/blind-book-1.jpg";
+import blindBook2 from "../assets/blind-book-2.jpg";
+import blindBook3 from "../assets/blind-book-3.jpg";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
   head: () => ({
     meta: [
-      { title: "Blind Date with a Book — Lasă destinul să-ți aleagă următoarea lectură" },
+      { title: "Blind Date with a Book — Mistery Box & Mistery Book" },
       {
         name: "description",
         content:
-          "O surpriză literară misterioasă și gotică. Fiecare carte este învelită cu grijă, sigilată cu ceară și livrată cu un bilet scris de mână și un mic suvenir.",
+          "Date Box și Blind Date with a Book — pachete misterioase cu o carte la alegere și surprize bookish. Livrare cu plata ramburs.",
       },
       { property: "og:title", content: "Blind Date with a Book" },
       {
         property: "og:description",
         content:
-          "Lasă destinul să-ți aleagă următoarea lectură. Învelită cu grijă și o notă de întuneric.",
+          "Două pachete misterioase: Date Box (130 lei) și Blind Date with a Book (60 lei). Transport gratuit, plata ramburs.",
       },
     ],
   }),
 });
 
-const PURCHASE_URL = "https://www.vinted.ro/member/185808324";
-
 function Ornament({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center justify-center gap-4 ${className}`}>
       <span className="ornament flex-1 max-w-[6rem]" aria-hidden />
-      <svg
-        viewBox="0 0 24 24"
-        width="20"
-        height="20"
-        className="text-gold animate-flicker"
-        aria-hidden
-      >
+      <svg viewBox="0 0 24 24" width="20" height="20" className="text-gold animate-flicker" aria-hidden>
         <path
           fill="currentColor"
           d="M12 2l1.6 4.9L18.5 8l-4 3.4 1.3 5.1L12 13.9 8.2 16.5l1.3-5.1L5.5 8l4.9-1.1L12 2z"
@@ -46,24 +42,144 @@ function Ornament({ className = "" }: { className?: string }) {
   );
 }
 
+type Product = {
+  id: "date-box" | "blind-date";
+  name: string;
+  tagline: string;
+  description: string;
+  price: number;
+  images: string[];
+  features: string[];
+};
+
+const PRODUCTS: Product[] = [
+  {
+    id: "date-box",
+    name: "Date Box",
+    tagline: "Mistery Box",
+    description:
+      "O cutie plină de magie: o carte la alegere (thriller, romance, dark romance sau fantasy) însoțită de multe surprize bookish atent alese.",
+    price: 130,
+    images: [dateBox1, dateBox2],
+    features: [
+      "📖 o carte — genul la alegerea ta",
+      "☕ cană tematică + accesorii",
+      "🔖 semne de carte & clipsuri",
+      "🖊️ pixuri, markere, stickere",
+      "📋 reading list & book review",
+      "🎁 multe alte surprize",
+    ],
+  },
+  {
+    id: "blind-date",
+    name: "Blind Date with a Book",
+    tagline: "Mistery Book",
+    description:
+      "Cartea misterioasă învelită cu grijă — alege genul (thriller, romance, dark romance, fantasy) și descoperă-o alături de articole bookish dedicate.",
+    price: 60,
+    images: [blindBook1, blindBook2, blindBook3],
+    features: [
+      "📖 o carte — genul la alegerea ta",
+      "🔖 semne de carte drăguțe",
+      "🖊️ pix & marker",
+      "🎨 stickere bookish",
+      "📝 sticky notes",
+      "❤️ multă, multă iubire",
+    ],
+  },
+];
+
+function ProductCard({ product, index }: { product: Product; index: number }) {
+  return (
+    <article
+      id={product.id}
+      className="group relative grid grid-cols-1 gap-10 rounded-sm border border-gold/15 bg-[oklch(0.13_0.02_20/0.5)] p-6 backdrop-blur-sm md:grid-cols-2 md:p-10"
+      style={{ animation: `fadeUp 1s ease-out ${0.1 + index * 0.15}s both` }}
+    >
+      <div className={`flex flex-col gap-4 ${index % 2 === 1 ? "md:order-2" : ""}`}>
+        <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
+          <img
+            src={product.images[0]}
+            alt={`${product.name} — fotografie principală`}
+            loading="lazy"
+            className="aspect-[4/3] w-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
+          />
+        </div>
+        {product.images.length > 1 && (
+          <div className="grid grid-cols-3 gap-3">
+            {product.images.slice(1).map((src, i) => (
+              <div
+                key={src}
+                className="vignette overflow-hidden rounded-sm border border-gold/15"
+              >
+                <img
+                  src={src}
+                  alt={`${product.name} — detaliu ${i + 1}`}
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className={`flex flex-col justify-center ${index % 2 === 1 ? "md:order-1" : ""}`}>
+        <p className="text-xs uppercase tracking-[0.45em] text-gold/80">{product.tagline}</p>
+        <h3 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">{product.name}</h3>
+        <p className="mt-5 font-serif text-lg text-muted-foreground sm:text-xl">
+          {product.description}
+        </p>
+
+        <ul className="mt-6 space-y-3 font-serif text-base text-muted-foreground">
+          {product.features.map((f) => (
+            <li key={f} className="flex items-start gap-3">
+              <span className="mt-3 inline-block h-px w-5 flex-shrink-0 bg-gold/60" />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-8 flex items-end justify-between gap-4 border-t border-gold/10 pt-6">
+          <div>
+            <p className="font-display text-4xl text-gold">{product.price} lei</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              Transport gratuit · Plata ramburs
+            </p>
+          </div>
+        </div>
+
+        <Link
+          to="/checkout"
+          search={{ p: product.id }}
+          className="group/btn relative mt-6 inline-flex items-center justify-center gap-3 overflow-hidden rounded-sm border border-gold/70 bg-gradient-to-b from-[oklch(0.36_0.13_15)] to-[oklch(0.22_0.08_15)] px-8 py-4 font-display text-base tracking-[0.2em] text-foreground uppercase shadow-[0_8px_40px_-12px_oklch(0.74_0.12_80/0.4)] transition-all duration-500 hover:border-gold hover:shadow-[0_8px_50px_-8px_oklch(0.74_0.12_80/0.7)] hover:-translate-y-0.5"
+        >
+          <span>Comandă acum</span>
+          <span aria-hidden className="transition-transform duration-500 group-hover/btn:translate-x-1">→</span>
+          <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/15 to-transparent transition-transform duration-1000 group-hover/btn:translate-x-full" />
+        </Link>
+      </div>
+    </article>
+  );
+}
+
 function LandingPage() {
   return (
     <main className="relative min-h-screen overflow-hidden">
-      {/* Top nav */}
       <header className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-6 animate-fade-in">
         <a href="#top" className="font-display text-lg tracking-widest text-gold">
           ✦ BDWAB
         </a>
         <nav className="hidden gap-8 text-xs uppercase tracking-[0.25em] text-muted-foreground sm:flex">
-          <a href="#concept" className="transition-colors hover:text-gold">Ritualul</a>
-          <a href="#inside" className="transition-colors hover:text-gold">Ce conține</a>
+          <a href="#date-box" className="transition-colors hover:text-gold">Date Box</a>
+          <a href="#blind-date" className="transition-colors hover:text-gold">Blind Date</a>
           <a href="#order" className="transition-colors hover:text-gold">Comandă</a>
         </nav>
       </header>
 
       {/* Hero */}
       <section id="top" className="relative">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-8 pb-24 md:grid-cols-2 md:pt-16 md:pb-32">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-8 pb-20 md:grid-cols-2 md:pt-16 md:pb-28">
           <div className="relative z-10">
             <p className="animate-fade-up text-xs uppercase tracking-[0.45em] text-gold/80">
               O ședință literară
@@ -72,31 +188,17 @@ function LandingPage() {
               Blind Date <span className="italic text-gold">with a</span> Book
             </h1>
             <p className="animate-fade-up delay-200 mt-6 max-w-md font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-              Lasă destinul să-ți aleagă următoarea lectură. Învelită cu grijă
-              <span className="text-foreground/90"> și o notă de întuneric.</span>
+              Lasă destinul să-ți aleagă următoarea lectură. Două pachete misterioase, multă magie bookish.
             </p>
 
             <div className="animate-fade-up delay-300 mt-10 flex flex-wrap items-center gap-5">
               <a
-                href={PURCHASE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#order"
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-sm border border-gold/70 bg-gradient-to-b from-[oklch(0.36_0.13_15)] to-[oklch(0.22_0.08_15)] px-8 py-4 font-display text-base tracking-[0.2em] text-foreground uppercase shadow-[0_8px_40px_-12px_oklch(0.74_0.12_80/0.4)] transition-all duration-500 hover:border-gold hover:shadow-[0_8px_50px_-8px_oklch(0.74_0.12_80/0.7)] hover:-translate-y-0.5"
               >
-                <span className="relative">Surprinde-mă</span>
-                <span
-                  aria-hidden
-                  className="relative transition-transform duration-500 group-hover:translate-x-1"
-                >
-                  →
-                </span>
+                <span>Vezi pachetele</span>
+                <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">↓</span>
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/15 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-              </a>
-              <a
-                href="#concept"
-                className="text-sm uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-gold"
-              >
-                Descoperă ritualul
               </a>
             </div>
 
@@ -107,7 +209,7 @@ function LandingPage() {
             <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
               <img
                 src={heroBook}
-                alt="O carte învelită în hârtie kraft îngălbenită, legată cu o panglică de catifea violet prăfuit și sigilată cu un sigiliu de ceară aurie, înconjurată de trandafiri uscați și lumânări."
+                alt="O carte învelită în hârtie kraft, sigilată cu ceară, înconjurată de trandafiri uscați și lumânări."
                 width={1536}
                 height={1536}
                 className="h-full w-full object-cover transition-transform duration-[2000ms] ease-out hover:scale-105"
@@ -118,134 +220,52 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Concept */}
-      <section id="concept" className="relative border-y border-gold/10 bg-[oklch(0.12_0.02_20/0.6)] backdrop-blur-sm">
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center md:py-32">
-          <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Ritualul</p>
-          <h2 className="mt-6 font-display text-4xl leading-tight sm:text-5xl">
-            Nu vei ști titlul <em className="text-gold">până nu sosește.</em>
-          </h2>
-          <Ornament className="mt-10" />
-          <p className="mx-auto mt-10 max-w-2xl font-serif text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-            Fiecare carte este aleasă cu grijă la lumina lumânării și învelită în hârtie maro.
-            Câteva indicii șoptite trădează sufletul ei — o stare, un anotimp, un singur rând —
-            însă titlul rămâne un secret până când sigiliul de ceară este rupt.
-          </p>
-        </div>
-      </section>
-
-      {/* Inside the parcel */}
-      <section id="inside" className="relative">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 py-24 md:grid-cols-2 md:py-32">
-          <div className="relative order-2 md:order-1">
-            <div className="vignette relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
-              <img
-                src={conceptBooks}
-                alt="O carte învelită în hârtie kraft, legată cu o panglică de catifea, sigilată cu ceară, alături de o scrisoare scrisă de mână și trandafiri uscați pe catifea bordo."
-                width={1536}
-                height={1152}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[2000ms] ease-out hover:scale-105"
-              />
-            </div>
-          </div>
-
-          <div className="order-1 md:order-2">
-            <p className="text-xs uppercase tracking-[0.45em] text-gold/80">În interiorul pachetului</p>
+      {/* Products */}
+      <section
+        id="order"
+        className="relative border-y border-gold/10 bg-[oklch(0.12_0.02_20/0.6)] backdrop-blur-sm"
+      >
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Pachetele noastre</p>
             <h2 className="mt-6 font-display text-4xl leading-tight sm:text-5xl">
-              O mică ceremonie, <em className="text-gold">livrată.</em>
+              Alege-ți <em className="text-gold">întâlnirea</em>
             </h2>
+            <Ornament className="mt-8" />
+          </div>
 
-            <p className="mt-6 font-serif text-lg text-muted-foreground sm:text-xl">
-              Fiecare pachet conține:
-            </p>
-            <ul className="mt-8 space-y-5 font-serif text-lg text-muted-foreground sm:text-xl">
-              {[
-                "📖 o carte (genul la alegerea ta – surpriză sau știut)",
-                "📋 reading list – sugestii de viitoare lecturi",
-                "✍️ book review – ca să-ți notezi impresiile",
-                "🔖 două semne de carte drăguțe",
-                "🖊️ un pix",
-                "🖍️ un marker",
-                "🎨 stickere",
-                "📝 sticky notes",
-                "☕ un plic de ceai sau cafea",
-                "❤️ multă, multă iubire ❤️",
-              ].map((item, i) => (
-                <li
-                  key={item}
-                  className="group flex items-center gap-4 transition-colors"
-                  style={{ animation: `fadeUp 1.2s ease-out ${0.1 + i * 0.08}s both` }}
-                >
-                  <span className="inline-block h-px w-6 flex-shrink-0 bg-gold/60 transition-all duration-500 group-hover:w-10 group-hover:bg-gold" />
-                  <span className="text-base leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-16 flex flex-col gap-12">
+            {PRODUCTS.map((p, i) => (
+              <ProductCard key={p.id} product={p} index={i} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA with gothic window */}
-      <section id="order" className="relative overflow-hidden">
+      {/* Gothic CTA */}
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img
-            src={gothicWindow}
-            alt=""
-            width={1280}
-            height={1600}
-            loading="lazy"
-            aria-hidden
-            className="h-full w-full object-cover opacity-40"
-          />
+          <img src={gothicWindow} alt="" loading="lazy" aria-hidden className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
         </div>
 
-        <div className="mx-auto max-w-3xl px-6 py-28 text-center md:py-40">
+        <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
           <p className="text-xs uppercase tracking-[0.45em] text-gold/80">Pășește în bibliotecă</p>
           <h2 className="mt-6 font-display text-4xl leading-tight sm:text-6xl">
             Te încrezi în <em className="text-gold">destin</em>?
           </h2>
           <p className="mx-auto mt-6 max-w-xl font-serif text-xl text-muted-foreground sm:text-2xl">
-            Următoarea ta obsesie te așteaptă în întuneric.
+            Plata se face ramburs, direct la curier. Transport gratuit pentru ambele pachete.
           </p>
-
-          <a
-            href={PURCHASE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative mt-12 inline-flex items-center gap-3 overflow-hidden rounded-sm border border-gold/70 bg-gradient-to-b from-[oklch(0.36_0.13_15)] to-[oklch(0.22_0.08_15)] px-10 py-5 font-display text-base tracking-[0.25em] text-foreground uppercase shadow-[0_10px_50px_-12px_oklch(0.74_0.12_80/0.5)] transition-all duration-500 hover:border-gold hover:shadow-[0_10px_60px_-8px_oklch(0.74_0.12_80/0.8)] hover:-translate-y-0.5"
-          >
-            <span>Comandă întâlnirea ta</span>
-            <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
-            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-          </a>
-
-          <Ornament className="mt-14" />
+          <Ornament className="mt-12" />
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="relative border-t border-gold/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
             © {new Date().getFullYear()} Blind Date with a Book
           </p>
-
-          {/* Raven silhouette */}
-          <svg
-            viewBox="0 0 64 32"
-            width="56"
-            height="28"
-            className="text-gold/70 transition-colors hover:text-gold"
-            aria-label="Corb"
-          >
-            <path
-              fill="currentColor"
-              d="M2 22c4-1 7-2 10-5 1 3 4 5 8 5 3 0 5-1 7-3 1 4 5 6 10 6 6 0 11-3 13-8-3 2-7 3-10 2 3-2 5-5 5-9-2 3-5 5-9 5-2 0-4-1-5-3-1 2-3 4-6 4-2 0-4-1-5-2-1 3-4 6-8 7-3 1-7 1-10 1z"
-            />
-          </svg>
-
           <p className="font-serif text-sm italic text-muted-foreground">
             „Cărțile sunt o magie unic de portabilă." ✦
           </p>
